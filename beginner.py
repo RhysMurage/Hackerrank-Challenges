@@ -8,7 +8,7 @@
 #         break
 
 
-# Leap year
+## Leap year
 # def is_leap(year):
 #     leap = False
     
@@ -25,7 +25,7 @@
 # print(is_leap(year))
 
 
-# Print Function
+## Print Function
 
 # n = int(input())
 # a = 0
@@ -59,15 +59,34 @@
 # # print(numb)
 # print(fcomb)  
 # print(comb)  
-# # print(comb[132])
 # print(icomb_even)
 # print(icomb_odd)
 
-# # print(comb[134])
+## Hackerrank solution to Print Function from Discussion section
+# print(*range(1, int(input())+1), sep='')
 
-# # comb=['1','5','8']
-# # x = enumerate(comb)
-# # print([x for x in x])
+## List comprehensions
 
+# x = int(input())
+# y = int(input())
+# z = int(input())
+# n = int(input())
 
-print(*range(1, int(input())+1), sep='')
+# cartesian_product = [[a,b,c] for a in range(0,x+1) for b in range(0,y+1) for c in range(0,z+1) if a+b+c != n]
+# # print(cartesian_product)
+
+# ##remove duplicates
+# # 1: (doesn't work for list of lists because list is not hashable)
+# # final_cartesian_product = list(dict.fromkeys(cartesian_product))
+# # print(final_cartesian_product)
+
+# # 2: from note.nkmk.me
+# def get_unique_list(seq):
+#     seen = []
+#     return [x for x in seq if x not in seen and not seen.append(x)]
+
+# print(get_unique_list(cartesian_product))
+
+x, y, z, n = (int(input()) for _ in range(4))
+
+## Find the Runner-up Score!
