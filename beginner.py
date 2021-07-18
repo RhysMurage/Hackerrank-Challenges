@@ -73,7 +73,7 @@
 # n = int(input())
 
 # cartesian_product = [[a,b,c] for a in range(0,x+1) for b in range(0,y+1) for c in range(0,z+1) if a+b+c != n]
-# # print(cartesian_product)
+# print(cartesian_product)
 
 # ##remove duplicates
 # # 1: (doesn't work for list of lists because list is not hashable)
@@ -87,6 +87,14 @@
 
 # print(get_unique_list(cartesian_product))
 
-x, y, z, n = (int(input()) for _ in range(4))
+## Hackerrank tip to avoid repetitive input calls from Discussion section
+# x, y, z, n = (int(input()) for _ in range(4))
 
 ## Find the Runner-up Score!
+n = int(input())
+arr = map(int, input().split())
+
+list1 = list(arr)
+new_list = sorted(list(set(list1)))
+print(new_list)
+print(new_list[-2])
