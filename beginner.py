@@ -91,10 +91,27 @@
 # x, y, z, n = (int(input()) for _ in range(4))
 
 ## Find the Runner-up Score!
-n = int(input())
-arr = map(int, input().split())
+# n = int(input())
+# arr = map(int, input().split())
 
-list1 = list(arr)
-new_list = sorted(list(set(list1)))
-print(new_list)
-print(new_list[-2])
+# #create list object
+# list1 = list(arr)
+
+# #create a set object that is iterable and removes duplicates, then convert to a sorted list
+# new_list = sorted(list(set(list1)))
+
+# #print
+# print(new_list[-2])
+
+## Nested Lists
+record=[]
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    record.append([name,score])
+
+def Sort(to_sort):
+    to_sort.sort(key=lambda x: x[1])
+    return to_sort
+
+print(Sort(record))
