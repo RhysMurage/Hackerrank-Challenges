@@ -104,36 +104,38 @@
 # print(new_list[-2])
 
 ## Nested Lists
-record=[]
-names =[]
-scores = []
-for _ in range(int(input())):
-    name = input()
-    score = float(input())
-    record.append([name,score])
-    record.sort(key=lambda x: x[1], reverse=True)
+# record=[]
+# names =[]
+# scores = []
+# for _ in range(int(input())):
+#     name = input()
+#     score = float(input())
+#     record.append([name,score])
+#     record.sort(key=lambda x: x[1], reverse=True)
 
 
-for x in record:
-    for y in x:
-        if isinstance(y,float) is True:
-            scores.append(y)
+# for x in record:
+#     for y in x:
+#         if isinstance(y,float) is True:
+#             scores.append(y)
 
 
-secondLastIndex = scores.index(min(scores)) - 1
-secondLastScore = record[secondLastIndex][-1]
+# secondLastIndex = scores.index(min(scores)) - 1
+# secondLastScore = record[secondLastIndex][-1]
 
-for x in record:
-    for y in x:
-        if secondLastScore == y:
-            names.append(x[0])
-            names.sort()
-        else:
-            pass
+# for x in record:
+#     for y in x:
+#         if secondLastScore == y:
+#             names.append(x[0])
+#             names.sort()
+#         else:
+#             pass
 
-for name in names:
-    print(name)
+# for name in names:
+#     print(name)
 
+
+## WORKINGS FOR NESTED LISTS
 # records = [['Harsh',20],['Beria',20],['Varun',19],['Kakunami',19],['Vikas',21]]
 # records.sort(key=lambda name: name[1], reverse=True)
 # scores = []
@@ -146,8 +148,6 @@ for name in names:
 # print(scores.index(min(scores)))
 # secondLastIndex = scores.index(min(scores)) - 1
 # print(scores[secondLastIndex])
-
-
 # for x in record:
 #     if secondLastScore == x[:4]:
 #         print(x)
@@ -156,16 +156,19 @@ for name in names:
 # print(secondLastScore)
 # print(secondLastName)
 
-
-
-
+## LAMDA FUNCTIONS TO SORT BY LAST NAME
 # scifi_authors = ['Issac Asimov', 'Ray Bradbury', 
 #     'Robert Heinlein', 'Arthus C. Clarke', 'Frank Herbert',
 #     'Orson Scott Card', 'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
-
 # help(scifi_authors.sort)
-
 # name = "Rhys Murage"
-# print(name.split()[-1].lower())
-# scifi_authors.sort(key=lambda name: name.split(' ')[-1].lower())
+# print(name.split()[-1].lower()) 
+# scifi_authors.sort(key=lambda name: name.split(' ')[-1].lower()) SPLIT NAMES WHERE THERE ARE SPACES
 # print(scifi_authors)
+
+marksheet = []
+for _ in range(0,int(input())):
+    marksheet.append([input(), float(input())])
+
+second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
