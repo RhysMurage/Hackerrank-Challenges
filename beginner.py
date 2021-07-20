@@ -105,13 +105,67 @@
 
 ## Nested Lists
 record=[]
+names =[]
+scores = []
 for _ in range(int(input())):
     name = input()
     score = float(input())
     record.append([name,score])
+    record.sort(key=lambda x: x[1], reverse=True)
 
-def Sort(to_sort):
-    to_sort.sort(key=lambda x: x[1])
-    return to_sort
 
-print(Sort(record))
+for x in record:
+    for y in x:
+        if isinstance(y,float) is True:
+            scores.append(y)
+
+
+secondLastIndex = scores.index(min(scores)) - 1
+secondLastScore = record[secondLastIndex][-1]
+
+for x in record:
+    for y in x:
+        if secondLastScore == y:
+            names.append(x[0])
+            names.sort()
+        else:
+            pass
+
+for name in names:
+    print(name)
+
+# records = [['Harsh',20],['Beria',20],['Varun',19],['Kakunami',19],['Vikas',21]]
+# records.sort(key=lambda name: name[1], reverse=True)
+# scores = []
+# print(records)
+# for x in records:
+#     for y in x:
+#         if isinstance(y,int) is True:
+#             scores.append(y)
+# print(scores)
+# print(scores.index(min(scores)))
+# secondLastIndex = scores.index(min(scores)) - 1
+# print(scores[secondLastIndex])
+
+
+# for x in record:
+#     if secondLastScore == x[:4]:
+#         print(x)
+#     else:
+#         print('nono')
+# print(secondLastScore)
+# print(secondLastName)
+
+
+
+
+# scifi_authors = ['Issac Asimov', 'Ray Bradbury', 
+#     'Robert Heinlein', 'Arthus C. Clarke', 'Frank Herbert',
+#     'Orson Scott Card', 'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
+
+# help(scifi_authors.sort)
+
+# name = "Rhys Murage"
+# print(name.split()[-1].lower())
+# scifi_authors.sort(key=lambda name: name.split(' ')[-1].lower())
+# print(scifi_authors)
