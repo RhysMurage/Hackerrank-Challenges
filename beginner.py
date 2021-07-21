@@ -198,21 +198,3 @@ print('%.2f'%average)
  
 ### using round() <though float like 56 will be 56.0 rather than 56.00
 ## print(round(<variable>, 2))
-
-
-
-
-# name1 = 'Rhys 78 96 65'
-# name2 = 'James 87 98 54'
-# score=[]
-# score.append(name1)
-# score.append(name2)
-# print(score)
-# specificScore=[]
-# for x in score:
-#    studentAndScores = x.split()
-#    student, scores = studentAndScores[0], studentAndScores[1:]
-#    scores = map(float, scores)
-#    student_marks[student] = list(scores)
-# print(student_marks)
-# print(student_marks['Rhys'])
