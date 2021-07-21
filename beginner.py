@@ -166,9 +166,53 @@
 # scifi_authors.sort(key=lambda name: name.split(' ')[-1].lower()) SPLIT NAMES WHERE THERE ARE SPACES
 # print(scifi_authors)
 
-marksheet = []
-for _ in range(0,int(input())):
-    marksheet.append([input(), float(input())])
+##Solution from discussion
+# marksheet = []
+# for _ in range(0,int(input())):
+#     marksheet.append([input(), float(input())])
 
-second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
-print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
+# second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+# print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
+
+## Finding the percentage
+import statistics
+n = int(input())
+student_marks = {}
+
+for _ in range(n):
+    name, *line = input().split()
+    scores = list(map(float, line))
+    student_marks[name] = scores
+query_name = input()
+print(student_marks[query_name])
+
+average = round(statistics.mean(student_marks[query_name]))
+print('%.2f'%average)
+
+## Setting Precision from GeeksforGeeks
+### using '%'
+## print('%.2f'$<variable>)
+
+### using format()
+## print('{0:.2f}'.format(<variable>))
+ 
+### using round() <though float like 56 will be 56.0 rather than 56.00
+## print(round(<variable>, 2))
+
+
+
+
+# name1 = 'Rhys 78 96 65'
+# name2 = 'James 87 98 54'
+# score=[]
+# score.append(name1)
+# score.append(name2)
+# print(score)
+# specificScore=[]
+# for x in score:
+#    studentAndScores = x.split()
+#    student, scores = studentAndScores[0], studentAndScores[1:]
+#    scores = map(float, scores)
+#    student_marks[student] = list(scores)
+# print(student_marks)
+# print(student_marks['Rhys'])
