@@ -175,19 +175,19 @@
 # print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
 
 ## Finding the percentage
-import statistics
-n = int(input())
-student_marks = {}
+# import statistics
+# n = int(input())
+# student_marks = {}
 
-for _ in range(n):
-    name, *line = input().split()
-    scores = list(map(float, line))
-    student_marks[name] = scores
-query_name = input()
-print(student_marks[query_name])
+# for _ in range(n):
+#     name, *line = input().split()
+#     scores = list(map(float, line))
+#     student_marks[name] = scores
+# query_name = input()
+# print(student_marks[query_name])
 
-average = round(statistics.mean(student_marks[query_name]))
-print('%.2f'%average)
+# average = round(statistics.mean(student_marks[query_name]))
+# print('%.2f'%average)
 
 ## Setting Precision from GeeksforGeeks
 ### using '%'
@@ -198,3 +198,31 @@ print('%.2f'%average)
  
 ### using round() <though float like 56 will be 56.0 rather than 56.00
 ## print(round(<variable>, 2))
+
+## Lists
+theList = []
+N = int(input())
+
+for _ in range(N):
+    theCommand, *integer = input().split()
+    if theCommand == 'insert':
+        for x in integer:
+            x=integer[0]
+            y=integer[1]
+            theList[y] = theList.append(x)
+    elif theCommand == 'print':
+        print(theList)
+    elif theCommand == 'remove':
+        theList.remove(*integer)
+    elif theCommand == 'append':
+        for x in integer:
+            theList.append(x)
+    elif theCommand == 'sort':
+        theList.sort()
+    elif theCommand == 'pop':
+        theList.pop(-1)
+    elif theCommand == 'reverse':
+        theList.reverse()
+
+
+    
