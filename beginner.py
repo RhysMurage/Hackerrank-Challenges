@@ -200,29 +200,48 @@
 ## print(round(<variable>, 2))
 
 ## Lists
-theList = []
+# theList = []
+from typing import final
+
+
 N = int(input())
+theList=[]
+theListOfCommands=[]
+finalOutput = []
 
 for _ in range(N):
-    theCommand, *integer = input().split()
-    if theCommand == 'insert':
+    theCommand, *integer = input().split(" ")
+    theList.append(integer)
+    theListOfCommands.append(theCommand)
+    print(theList)
+    if 'insert' in theListOfCommands:
+        for x in theList:
+            number = int(x[0])
+            position = int(x[1])
+            finalOutput[position]=number
+    elif 'print' in theListOfCommands:
+        print(finalOutput)
+    elif 'remove' in theListOfCommands:
+        for x in theList:
+            finalOutput.remove(int(x))
+    elif 'append' in theListOfCommands:
         for x in integer:
-            x=integer[0]
-            y=integer[1]
-            theList[y] = theList.append(x)
-    elif theCommand == 'print':
-        print(theList)
-    elif theCommand == 'remove':
-        theList.remove(*integer)
-    elif theCommand == 'append':
-        for x in integer:
-            theList.append(x)
-    elif theCommand == 'sort':
-        theList.sort()
-    elif theCommand == 'pop':
-        theList.pop(-1)
-    elif theCommand == 'reverse':
-        theList.reverse()
+            finalOutput.append(int(x))
+    elif 'sort' in theListOfCommands:
+        finalOutput.sort()
+    elif 'pop' in theListOfCommands:
+        finalOutput.pop(-1)
+    elif 'reverse' in theListOfCommands:
+        finalOutput.reverse()
 
+print(finalOutput)
 
-    
+# for _ in range(N):        
+#         theCommand, *integer = input().split(" ")
+#         theList.append(integer)
+#         theListOfCommands.append(theCommand)
+
+# print(theListOfCommands)
+# print(theList)
+                
+                
