@@ -215,10 +215,10 @@ for _ in range(N):
     theListOfCommands.append(theCommand)
     print(theList)
     if 'insert' in theListOfCommands:
-        for x in theList:
-            number = int(x[0])
-            position = int(x[1])
-            finalOutput[position]=number
+        var1 , var2 = [x for x in theList]
+        var1 = int(var1[0])
+        var2 = int(var2[0])
+        finalOutput[var2]=var1
     elif 'print' in theListOfCommands:
         print(finalOutput)
     elif 'remove' in theListOfCommands:
