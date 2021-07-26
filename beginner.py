@@ -222,8 +222,7 @@ for _ in range(N):
     elif 'print' in theListOfCommands:
         print(finalOutput)
     elif 'remove' in theListOfCommands:
-        for x in theList:
-            finalOutput.remove(int(x))
+        finalOutput.remove(int(x))
     elif 'append' in theListOfCommands:
         for x in integer:
             finalOutput.append(int(x))
