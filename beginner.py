@@ -213,7 +213,6 @@ for _ in range(N):
     theCommand, *integer = input().split(" ")
     theList.append(integer)
     theListOfCommands.append(theCommand)
-    print(theList)
     if 'insert' in theListOfCommands:
         var1 , var2 = [x for x in theList]
         var1 = int(var1[0])
@@ -224,8 +223,7 @@ for _ in range(N):
     elif 'remove' in theListOfCommands:
         finalOutput.remove(int(x))
     elif 'append' in theListOfCommands:
-        for x in integer:
-            finalOutput.append(int(x))
+        finalOutput.append(int(x))
     elif 'sort' in theListOfCommands:
         finalOutput.sort()
     elif 'pop' in theListOfCommands:
