@@ -207,22 +207,27 @@ from typing import final
 N = int(input())
 theList=[]
 theListOfCommands=[]
+listOfPositions = []
 finalOutput = []
+commandAndInt = {}
 
 for _ in range(N):
     theCommand, *integer = input().split(" ")
+    commandAndInt.update({theCommand:integer})    
+
     theList.append(integer)
     theListOfCommands.append(theCommand)
-    print(theList)
     if 'insert' in theListOfCommands:
+        var1, var2 = [theList[i] for i in (0,1)]
+        print(var1,var2)
         for x in theList:
-            number = int(x[0])
-            position = int(x[1])
+            number = int(var1[0])
+            position = int(var2[0])
             finalOutput[position]=number
     elif 'print' in theListOfCommands:
         print(finalOutput)
     elif 'remove' in theListOfCommands:
-        for x in theList:
+        for x in integer:
             finalOutput.remove(int(x))
     elif 'append' in theListOfCommands:
         for x in integer:
@@ -232,9 +237,9 @@ for _ in range(N):
     elif 'pop' in theListOfCommands:
         finalOutput.pop(-1)
     elif 'reverse' in theListOfCommands:
-        finalOutput.reverse()
-
-print(finalOutput)
+        x = len(finalOutput)
+        print(x)
+print(commandAndInt)
 
 # for _ in range(N):        
 #         theCommand, *integer = input().split(" ")
@@ -243,5 +248,3 @@ print(finalOutput)
 
 # print(theListOfCommands)
 # print(theList)
-                
-                
