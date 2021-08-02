@@ -203,44 +203,34 @@
 # theList = []
 from typing import final
 
+
 N = int(input())
 theList=[]
 theListOfCommands=[]
 listOfPositions = []
 finalOutput = []
-intList = []
 commandAndInt = {}
 
-
 for _ in range(N):
-    theCommand, *integer = input().split(" ")   
+    theCommand, *integer = input().split(" ")
     theList.append(integer)
     theListOfCommands.append(theCommand)
-<<<<<<< HEAD
-    if 'insert' in theListOfCommands:
-=======
 
-    for x in integer:
-        intList.append(int(x))
+    intList = [x for x in theList]
 
-    zipValues = zip(theListOfCommands,intList)
     for x in commandAndInt:
-        commandAndInt.update(dict(zipValues))
-        print(commandAndInt)
+        commandAndInt.update(dict(zip(theListOfCommands,intList)))
 
-    if 'print' in theListOfCommands:
+
+    if 'insert' in theListOfCommands:
+        var1 , var2 = [x for x in theList]
+        number = int(var1[0])
+        position = int(var2[0])
+        finalOutput.insert(position,number)
+    elif 'print' in theListOfCommands:
         print(finalOutput)
-    elif 'insert' in theListOfCommands:
->>>>>>> 0088721927189f2096d7cfa81d7e1816926519b4
-        var1, var2 = [theList[i] for i in (0,1)]
-        print(var1,var2)
-        for x in theList:
-            number = int(var1[0])
-            position = int(var2[0])
-            finalOutput[position]=number
     elif 'remove' in theListOfCommands:
-        for x in integer:
-            finalOutput.remove(int(x))
+        finalOutput.remove(int(x))
     elif 'append' in theListOfCommands:
         for x in integer:
             finalOutput.append(int(x))
@@ -249,9 +239,8 @@ for _ in range(N):
     elif 'pop' in theListOfCommands:
         finalOutput.pop(-1)
     elif 'reverse' in theListOfCommands:
-<<<<<<< HEAD
-        x = len(finalOutput)
-        print(x)
+        finalOutput.reverse()
+
 print(commandAndInt)
 
 # for _ in range(N):        
@@ -261,8 +250,3 @@ print(commandAndInt)
 
 # print(theListOfCommands)
 # print(theList)
-=======
-        finalOutput.reverse()
-
-print(theListOfCommands)
->>>>>>> 0088721927189f2096d7cfa81d7e1816926519b4
