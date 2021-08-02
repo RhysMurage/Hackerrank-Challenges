@@ -203,26 +203,40 @@
 # theList = []
 from typing import final
 
-
 N = int(input())
 theList=[]
 theListOfCommands=[]
+listOfPositions = []
 finalOutput = []
+intList = []
+commandAndInt = {}
+
 
 for _ in range(N):
-    theCommand, *integer = input().split(" ")
+    theCommand, *integer = input().split(" ")   
     theList.append(integer)
     theListOfCommands.append(theCommand)
-    print(theList)
-    if 'insert' in theListOfCommands:
-        var1 , var2 = [x for x in theList]
-        number = int(var1[0])
-        position = int(var2[0])
-        finalOutput.insert(position,number)
-    elif 'print' in theListOfCommands:
+
+    for x in integer:
+        intList.append(int(x))
+
+    zipValues = zip(theListOfCommands,intList)
+    for x in commandAndInt:
+        commandAndInt.update(dict(zipValues))
+        print(commandAndInt)
+
+    if 'print' in theListOfCommands:
         print(finalOutput)
+    elif 'insert' in theListOfCommands:
+        var1, var2 = [theList[i] for i in (0,1)]
+        print(var1,var2)
+        for x in theList:
+            number = int(var1[0])
+            position = int(var2[0])
+            finalOutput[position]=number
     elif 'remove' in theListOfCommands:
-        finalOutput.remove(int(x))
+        for x in integer:
+            finalOutput.remove(int(x))
     elif 'append' in theListOfCommands:
         for x in integer:
             finalOutput.append(int(x))
@@ -234,13 +248,3 @@ for _ in range(N):
         finalOutput.reverse()
 
 print(theListOfCommands)
-
-# for _ in range(N):        
-#         theCommand, *integer = input().split(" ")
-#         theList.append(integer)
-#         theListOfCommands.append(theCommand)
-
-# print(theListOfCommands)
-# print(theList)
-                
-                
