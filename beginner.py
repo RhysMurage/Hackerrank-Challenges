@@ -216,6 +216,7 @@ for _ in range(N):
     theCommand, *integer = input().split(" ")   
     theList.append(integer)
     theListOfCommands.append(theCommand)
+
     for x in integer:
         intList.append(int(x))
 
@@ -244,9 +245,6 @@ for _ in range(N):
     elif 'pop' in theListOfCommands:
         finalOutput.pop(-1)
     elif 'reverse' in theListOfCommands:
-        x = len(finalOutput)
-        print(x)
+        finalOutput.reverse()
+
 print(theListOfCommands)
-print(intList)
-print(intList)
-print(commandAndInt)
