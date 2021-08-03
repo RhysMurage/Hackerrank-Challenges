@@ -204,49 +204,50 @@
 from typing import final
 
 
+
 N = int(input())
 theList=[]
 theListOfCommands=[]
 listOfPositions = []
-finalOutput = []
-commandAndInt = {}
+intList = []
+commandAndInt = {
+    'insert':'',
+    'print':'',
+    'remove':'',
+    'append':'',
+    'sort':'',
+    'pop':'',
+    'reverse':''
+
+}
 
 for _ in range(N):
     theCommand, *integer = input().split(" ")
-    theList.append(integer)
-    theListOfCommands.append(theCommand)
-
-    intList = [x for x in theList]
-
-    for x in commandAndInt:
-        commandAndInt.update(dict(zip(theListOfCommands,intList)))
-
-
-    if 'insert' in theListOfCommands:
-        var1 , var2 = [x for x in theList]
-        number = int(var1[0])
-        position = int(var2[0])
-        finalOutput.insert(position,number)
-    elif 'print' in theListOfCommands:
-        print(finalOutput)
-    elif 'remove' in theListOfCommands:
-        finalOutput.remove(int(x))
-    elif 'append' in theListOfCommands:
+    print(integer)
+    if theCommand == 'append':
         for x in integer:
-            finalOutput.append(int(x))
-    elif 'sort' in theListOfCommands:
-        finalOutput.sort()
-    elif 'pop' in theListOfCommands:
-        finalOutput.pop(-1)
-    elif 'reverse' in theListOfCommands:
-        finalOutput.reverse()
-
-print(commandAndInt)
-
-# for _ in range(N):        
-#         theCommand, *integer = input().split(" ")
-#         theList.append(integer)
-#         theListOfCommands.append(theCommand)
-
-# print(theListOfCommands)
-# print(theList)
+            intList.append(int(x))
+            print(intList)
+    elif theCommand == 'print':
+        print(intList)
+    elif theCommand == 'insert':
+        position = int(integer[0])
+        number = int(integer[1])
+        if len(intList)>0:
+            intList[position] = number
+            print(intList)
+        else:
+            intList.append(number)
+    elif theCommand == 'remove':
+        for x in integer:
+            intList.remove(int(x))
+            print(intList)
+    elif theCommand == 'sort':
+        intList.sort()
+    elif theCommand == 'pop':
+        intList.pop(-1)
+    elif theCommand == 'reverse':
+        intList.reverse()
+    
+    
+            
