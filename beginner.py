@@ -199,55 +199,53 @@
 ### using round() <though float like 56 will be 56.0 rather than 56.00
 ## print(round(<variable>, 2))
 
-## Lists
-# theList = []
+# Lists
+theList = []
 from typing import final
 
 
 
 N = int(input())
 theList=[]
-theListOfCommands=[]
-listOfPositions = []
 intList = []
-commandAndInt = {
-    'insert':'',
-    'print':'',
-    'remove':'',
-    'append':'',
-    'sort':'',
-    'pop':'',
-    'reverse':''
-
-}
 
 for _ in range(N):
     theCommand, *integer = input().split(" ")
-    print(integer)
     if theCommand == 'append':
         for x in integer:
             intList.append(int(x))
-            print(intList)
+
     elif theCommand == 'print':
         print(intList)
+
     elif theCommand == 'insert':
         position = int(integer[0])
         number = int(integer[1])
-        if len(intList)>0:
-            intList[position] = number
-            print(intList)
-        else:
-            intList.append(number)
+        intList.insert(position,number)
+        # if len(intList)>0:
+        #     try:
+        #         intList[position] = number
+        #         print(intList)
+        #     except IndexError:
+        #         intList.insert(position,number)
+        #         print(intList)
+        # else:
+        #     intList.append(number)
+        #     print(intList)
+
     elif theCommand == 'remove':
         for x in integer:
             intList.remove(int(x))
             print(intList)
+
     elif theCommand == 'sort':
         intList.sort()
+        print(intList)
+
     elif theCommand == 'pop':
         intList.pop(-1)
+        print(intList)
+
     elif theCommand == 'reverse':
         intList.reverse()
-    
-    
-            
+        print(intList)
