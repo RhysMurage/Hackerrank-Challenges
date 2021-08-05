@@ -200,52 +200,43 @@
 ## print(round(<variable>, 2))
 
 # Lists
-theList = []
-from typing import final
+# N = int(input())
+# intList = []
 
+# for _ in range(N):
+#     theCommand, *integer = input().split(" ")
+#     if theCommand == 'append':
+#         for x in integer:
+#             intList.append(int(x))
 
+#     elif theCommand == 'print':
+#         print(intList)
 
-N = int(input())
-theList=[]
-intList = []
+#     elif theCommand == 'insert':
+#         position = int(integer[0])
+#         number = int(integer[1])
+#         intList.insert(position,number)
 
-for _ in range(N):
-    theCommand, *integer = input().split(" ")
-    if theCommand == 'append':
-        for x in integer:
-            intList.append(int(x))
+#     elif theCommand == 'remove':
+#         for x in integer:
+#             intList.remove(int(x))
+#             print(intList)
 
-    elif theCommand == 'print':
-        print(intList)
+#     elif theCommand == 'sort':
+#         intList.sort()
+#         print(intList)
 
-    elif theCommand == 'insert':
-        position = int(integer[0])
-        number = int(integer[1])
-        intList.insert(position,number)
-        # if len(intList)>0:
-        #     try:
-        #         intList[position] = number
-        #         print(intList)
-        #     except IndexError:
-        #         intList.insert(position,number)
-        #         print(intList)
-        # else:
-        #     intList.append(number)
-        #     print(intList)
+#     elif theCommand == 'pop':
+#         intList.pop(-1)
+#         print(intList)
 
-    elif theCommand == 'remove':
-        for x in integer:
-            intList.remove(int(x))
-            print(intList)
+#     elif theCommand == 'reverse':
+#         intList.reverse()
+#         print(intList)
 
-    elif theCommand == 'sort':
-        intList.sort()
-        print(intList)
+# Lists
+int_list = []
 
-    elif theCommand == 'pop':
-        intList.pop(-1)
-        print(intList)
-
-    elif theCommand == 'reverse':
-        intList.reverse()
-        print(intList)
+n = int(input())
+integer_list = map(int, input().split())
+print(hash(tuple(list(integer_list))))
