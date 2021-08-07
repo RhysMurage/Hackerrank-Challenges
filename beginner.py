@@ -262,9 +262,23 @@
 # result = split_and_join(line)
 # print(result)
 
-# What's your name?
+# # What's your name?
 
-def print_full_name(first, last):
-    print(f'Hello {first} {last}! You just delved into python.')
-# alternatively use string.format()
-print_full_name('Rhys', 'Mwangi')
+# def print_full_name(first, last):
+#     print(f'Hello {first} {last}! You just delved into python.')
+# # alternatively use string.format()
+# print_full_name('Rhys', 'Mwangi')
+
+# Mutations
+
+def mutate_string(string, position, character):
+    stringList = list(string)
+    stringList[position-1] = character
+    new_string =  ''.join(stringList)
+    print(new_string)
+
+    # alternatively
+    # string = string[:position] + character + string[position+1:]
+    
+
+mutate_string('Hi, my name is Rhys', 5,'k')
