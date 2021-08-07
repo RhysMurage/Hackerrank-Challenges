@@ -251,13 +251,20 @@
 # print(result)
 
 
-# String Split and Join
+# # String Split and Join
 
-def split_and_join(line):
-    a = line.split(" ")
-    a = '-'.join(a)
-    return a
+# def split_and_join(line):
+#     a = line.split(" ")
+#     a = '-'.join(a)
+#     return a
 
-line = input()
-result = split_and_join(line)
-print(result)
+# line = input()
+# result = split_and_join(line)
+# print(result)
+
+# What's your name?
+
+def print_full_name(first, last):
+    print(f'Hello {first} {last}! You just delved into python.')
+# alternatively use string.format()
+print_full_name('Rhys', 'Mwangi')
