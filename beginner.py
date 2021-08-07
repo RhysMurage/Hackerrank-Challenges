@@ -241,11 +241,23 @@
 # integer_list = map(int, input().split())
 # print(hash(tuple(list(integer_list))))
 
-# Swap_Case
+## Swap_Case
 
-def swap_case(s):
-    return s.swapcase()
+# def swap_case(s):
+#     return s.swapcase()
 
-s = input()
-result = swap_case(s)
+# s = input()
+# result = swap_case(s)
+# print(result)
+
+
+# String Split and Join
+
+def split_and_join(line):
+    a = line.split(" ")
+    a = '-'.join(a)
+    return a
+
+line = input()
+result = split_and_join(line)
 print(result)
