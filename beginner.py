@@ -271,14 +271,19 @@
 
 # Mutations
 
-def mutate_string(string, position, character):
-    stringList = list(string)
-    stringList[position-1] = character
-    new_string =  ''.join(stringList)
-    print(new_string)
+# def mutate_string(string, position, character):
+#     stringList = list(string)
+#     stringList[position-1] = character
+#     new_string =  ''.join(stringList)
+#     print(new_string)
 
-    # alternatively
-    # string = string[:position] + character + string[position+1:]
+#     # alternatively
+#     # string = string[:position] + character + string[position+1:]
     
 
-mutate_string('Hi, my name is Rhys', 5,'k')
+# mutate_string('Hi, my name is Rhys', 5,'k')
+
+def multiply(a,b):
+    print(a*b)
+
+multiply(3,5)
