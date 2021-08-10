@@ -283,7 +283,19 @@
 
 # mutate_string('Hi, my name is Rhys', 5,'k')
 
-def multiply(a,b):
-    print(a*b)
+# Find a string
+from typing import Counter
+foward =[]
+reverse=[]
 
-multiply(3,5)
+def count_substring(string, sub_string):
+    string,sub_string = string.lower(), sub_string.lower()
+    reverseList = string.split()
+    reversedString = ''.join(reverseList)
+    countFront = string.count(sub_string)
+    countBack = reversedString.count(sub_string)
+    print(countFront+countBack)
+   
+  
+
+count_substring('ThIsisCoNfUsInG','is')
