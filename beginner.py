@@ -285,8 +285,6 @@
 
 # Find a string
 from typing import Counter
-foward =[]
-reverse=[]
 
 def count_substring(string, sub_string):
     for i in range(0,len(string)):
