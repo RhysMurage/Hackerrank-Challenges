@@ -289,13 +289,12 @@ foward =[]
 reverse=[]
 
 def count_substring(string, sub_string):
-    string,sub_string = string.lower(), sub_string.lower()
-    reverseList = string.split()
-    reversedString = ''.join(reverseList)
-    countFront = string.count(sub_string)
-    countBack = reversedString.count(sub_string)
-    print(countFront+countBack)
+    for i in range(0,len(string)):
+        for y in range(0,len(string),len(sub_string)):
+            print(string[i:y])
+
    
   
 
-count_substring('ThIsisCoNfUsInG','is')
+# count_substring('ThIsisCoNfUsInG','is')
+count_substring('ABCDCDC', 'CDC')
