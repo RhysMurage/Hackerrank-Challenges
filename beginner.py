@@ -288,6 +288,7 @@ from typing import Counter
 foward =[]
 reverse=[]
 
+<<<<<<< HEAD
 def count_substring(string, sub_string):
     for i in range(0,len(string)):
         for y in range(0,len(string),len(sub_string)):
@@ -297,4 +298,24 @@ def count_substring(string, sub_string):
   
 
 # count_substring('ThIsisCoNfUsInG','is')
+=======
+# def count_substring(string, sub_string):
+#     for i in range(0,len(string)):
+#         for y in range(0,len(string),len(sub_string)):
+#             print(string[i:y])
+
+
+def count_substring(string, sub_string):
+    x = len(sub_string)
+    count = 0
+    for i in range(0, len(string)):
+        y = string[i:x]
+        if y == sub_string:
+            # print(y)
+            count += 1
+        x += 1
+    print(count)
+    
+count_substring('ThIsisCoNfUsInG','is')
+>>>>>>> 8ba5225 (find_a_string solution)
 count_substring('ABCDCDC', 'CDC')
