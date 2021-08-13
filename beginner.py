@@ -283,13 +283,47 @@
 
 # mutate_string('Hi, my name is Rhys', 5,'k')
 
-# Find a string
-from typing import Counter
+# # Find a string
+# from typing import Counter
 
-def count_substring(string, sub_string):
-    for i in range(0,len(string)):
-        for y in range(0,len(string),len(sub_string)):
-            print(string[i:y])
+# def count_substring(string, sub_string):
+#     for i in range(0,len(string)):
+#         for y in range(0,len(string),len(sub_string)):
+#             print(string[i:y])
 
-# count_substring('ThIsisCoNfUsInG','is')
-count_substring('ABCDCDC', 'CDC')
+# # count_substring('ThIsisCoNfUsInG','is')
+# count_substring('ABCDCDC', 'CDC')
+
+# String Validators
+s = input()
+if s.isalnum() is True:
+    print('True')
+else:
+    print('False')
+for letter in s:
+    if letter.isalpha() is False:
+        pass
+    else:
+        print('True')
+        break
+if s.isalpha() is False:
+    print('True')
+else:
+    print('False')
+for letter in s:
+    if s.islower() is False:
+        print('False')
+    if letter.islower() is False:
+        pass
+    elif letter.islower() is True:
+        print('True')
+        break
+for letter in s:
+    if s.isupper() is False:
+        print('Falses')
+    if letter.isupper() is False:
+        pass
+    elif letter.isupper() is True:
+        print('True')
+        break
+
