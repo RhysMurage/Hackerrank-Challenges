@@ -296,34 +296,10 @@
 
 # String Validators
 s = input()
-if s.isalnum() is True:
-    print('True')
-else:
-    print('False')
 for letter in s:
-    if letter.isalpha() is False:
-        pass
-    else:
+    for i in range(0,len(s)):
+        if not s[i].isalnum():
+            pass
+        elif letter.isalnum():
+            break
         print('True')
-        break
-if s.isalpha() is False:
-    print('True')
-else:
-    print('False')
-for letter in s:
-    if s.islower() is False:
-        print('False')
-    if letter.islower() is False:
-        pass
-    elif letter.islower() is True:
-        print('True')
-        break
-for letter in s:
-    if s.isupper() is False:
-        print('Falses')
-    if letter.isupper() is False:
-        pass
-    elif letter.isupper() is True:
-        print('True')
-        break
-
