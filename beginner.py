@@ -296,10 +296,10 @@
 
 # String Validators
 s = input()
-for letter in s:
+for letters in s:
     for i in range(0,len(s)):
         if not s[i].isalnum():
             pass
-        elif letter.isalnum():
+        elif letters.isalnum():
             break
         print('True')
