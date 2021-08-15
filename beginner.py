@@ -295,11 +295,9 @@
 # count_substring('ABCDCDC', 'CDC')
 
 # String Validators
-s = input()
-for letters in s:
-    for i in range(0,len(s)):
-        if not s[i].isalnum():
-            pass
-        elif letters.isalnum():
-            break
+s = str(input())
+
+for i in range(0,len(s)):
+    if s[i].isalnum() is True:
         print('True')
+        
