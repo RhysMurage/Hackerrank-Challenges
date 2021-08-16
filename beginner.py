@@ -299,16 +299,22 @@ s = input()
 
 for letter in s:
     i = 0
-    letter = s[i]
-    while i <= len(s):
+    x = len(s)-1
+    print(x)
+    while i <= x:
+        letter = s[i]
         if letter.isalnum():
             print('True')
             break
         elif not letter.isalnum():
-            i += 1
-            letter = s[i]
-            if i == len(s):
+            if i == x:
                 print('False')
+                break
+            i += 1
+            # letter = s[i]
+        else:
+            print('False')
+            break
     break   
     
             
