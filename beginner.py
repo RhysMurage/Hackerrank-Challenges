@@ -300,7 +300,6 @@ s = input()
 for letter in s:
     i = 0
     x = len(s)-1
-    print(x)
     while i <= x:
         letter = s[i]
         if letter.isalnum():
@@ -315,7 +314,24 @@ for letter in s:
         else:
             print('False')
             break
-    break   
+    break
+
+for letter in s:
+    i = 0
+    x = len(s)-1
+    while i <= x:
+        if letter.isalpha():
+            print('True')
+            break
+        elif not letter.isalpha():
+            if i == x:
+                print('False')
+                break
+            i += 1
+    break
+
+    
+
     
             
       
