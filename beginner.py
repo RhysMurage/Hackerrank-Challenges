@@ -296,79 +296,93 @@
 
 # String Validators
 s = input()
-i=0
-x=len(s)
+
 #alphanumerical
-for letter in s:
-    while i <= x:
-        letter = s[i]
-        if letter.isalnum():
-            print('True')
-            break
-        elif not letter.isalnum():
-            if i == x:
-                print('False')
-                break
-            i += 1
-            # letter = s[i]
-        else:
-            print('False')
-            break
-    break
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isalnum():
+#             print('True')
+#             break
+#         elif not letter.isalnum():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#             # letter = s[i]
+#         else:
+#             print('False')
+#             break
+#     break
 
-#alphabetical
-for letter in s:
-    while i <= x:
-        letter = s[i]
-        if letter.isalpha():
-            print('True')
-            break
-        elif not letter.isalpha():
-            if i == x:
-                print('False')
-                break
-            i += 1
-    break
+# #alphabetical
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isalpha():
+#             print('True')
+#             break
+#         elif not letter.isalpha():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break
 
-#digits
-for letter in s:
-    while i <= x:
-        letter = s[i]
-        if letter.isdigit():
-            print('True')
-            break
-        elif not letter.isdigit():
-            if i == x:
-                print('False')
-                break
-            i += 1
-    break
+# #digits
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isdigit():
+#             print('True')
+#             break
+#         elif not letter.isdigit():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break
 
-#lowercase
-for letter in s:
-    while i <= x:
-        letter = s[i]
-        if letter.islower():
-            print('True')
-            break
-        elif not letter.islower():
-            if i == x:
-                print('False')
-                break
-            i += 1
-    break           
+# #lowercase
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.islower():
+#             print('True')
+#             break
+#         elif not letter.islower():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break           
 
-#uppercase     
-for letter in s:
-    while i <= x:
-        letter = s[i]
-        if letter.isupper():
-            print('True')
-            break
-        elif not letter.isupper():
-            if i == x:
-                print('False')
-                break
-            i += 1
-    break
+# #uppercase     
+# for letter in s:
+    # i = 0
+    # x = len(s)
+    # while i <= x:
+    #     letter = s[i]
+    #     if letter.isupper():
+    #         print('True')
+    #         break
+    #     elif not letter.isupper():
+    #         if i == x:
+    #             print('False')
+    #             break
+    #         i += 1
+    # break
 
+print(any(c.isalnum() for c in s))
+print(any(c.isalpha() for c in s))
+print(any(c.isdigit() for c in s))
+print(any(c.islower() for c in s))
+print(any(c.isupper() for c in s))
