@@ -295,7 +295,11 @@
 # count_substring('ABCDCDC', 'CDC')
 
 # String Validators
+<<<<<<< HEAD
 s = input()
+=======
+# s = input()
+>>>>>>> text_alignment
 
 #alphanumerical
 # for letter in s:
@@ -381,8 +385,40 @@ s = input()
     #         i += 1
     # break
 
+<<<<<<< HEAD
 print(any(c.isalnum() for c in s))
 print(any(c.isalpha() for c in s))
 print(any(c.isdigit() for c in s))
 print(any(c.islower() for c in s))
 print(any(c.isupper() for c in s))
+=======
+# print(any(c.isalnum() for c in s))
+# print(any(c.isalpha() for c in s))
+# print(any(c.isdigit() for c in s))
+# print(any(c.islower() for c in s))
+# print(any(c.isupper() for c in s))
+
+# Text alignment
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).center(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).rjust(thickness*2)+(c*thickness).center(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).rjust(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).rjust(thickness*2)+(c*thickness).center(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).center(thickness)+c+(c*(thickness-i-1)).center(thickness)).rjust(thickness*6))
+>>>>>>> text_alignment
