@@ -295,9 +295,118 @@
 # count_substring('ABCDCDC', 'CDC')
 
 # String Validators
-s = str(input())
+# s = input()
 
-for i in range(0,len(s)):
-    if s[i].isalnum() is True:
-        print('True')
-        
+#alphanumerical
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isalnum():
+#             print('True')
+#             break
+#         elif not letter.isalnum():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#             # letter = s[i]
+#         else:
+#             print('False')
+#             break
+#     break
+
+# #alphabetical
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isalpha():
+#             print('True')
+#             break
+#         elif not letter.isalpha():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break
+
+# #digits
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.isdigit():
+#             print('True')
+#             break
+#         elif not letter.isdigit():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break
+
+# #lowercase
+# for letter in s:
+#     i = 0
+#     x = len(s)
+#     while i <= x:
+#         letter = s[i]
+#         if letter.islower():
+#             print('True')
+#             break
+#         elif not letter.islower():
+#             if i == x:
+#                 print('False')
+#                 break
+#             i += 1
+#     break           
+
+# #uppercase     
+# for letter in s:
+    # i = 0
+    # x = len(s)
+    # while i <= x:
+    #     letter = s[i]
+    #     if letter.isupper():
+    #         print('True')
+    #         break
+    #     elif not letter.isupper():
+    #         if i == x:
+    #             print('False')
+    #             break
+    #         i += 1
+    # break
+
+# print(any(c.isalnum() for c in s))
+# print(any(c.isalpha() for c in s))
+# print(any(c.isdigit() for c in s))
+# print(any(c.islower() for c in s))
+# print(any(c.isupper() for c in s))
+
+# Text alignment
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).center(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).rjust(thickness*2)+(c*thickness).center(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).rjust(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).rjust(thickness*2)+(c*thickness).center(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).center(thickness)+c+(c*(thickness-i-1)).center(thickness)).rjust(thickness*6))
